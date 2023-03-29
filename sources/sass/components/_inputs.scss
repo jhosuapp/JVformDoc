@@ -1,0 +1,106 @@
+@use '../config/variables' as var;
+
+.JVform{
+    label{
+        color: var.$tertiary-color;
+        font-size: 1.5rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea,
+    select{
+        margin-top: .5rem;
+        border: none;
+        border: 1.5px solid var.$tertiary-color;
+        outline: inherit;
+        background-color: transparent;
+        padding: 1rem 1.5rem;
+        border-radius: .5rem;
+        color: var.$tertiary-color;
+        font-size: 1.4rem;
+        width: 100%;
+    }
+    input[type="number"]{
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button{
+            appearance: none;
+        }
+    }
+    input[type="checkbox"]{
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid var.$tertiary-color;
+        border-radius: 5px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::before{
+            position: absolute;
+            content: "✓";
+            font-size: 1.3rem;
+            color: var.$tertiary-color;
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s ease opacity;
+        }
+        &:checked{
+            &::before{
+                opacity: 1;
+            }
+        }
+    }
+    input[type="radio"]{
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 100px;
+        border: 1.5px solid var.$tertiary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease background-color;
+        &::before{
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 100px;
+            background-color: var.$primary-color;
+            opacity: 0;
+            transition: .3s ease opacity;
+        }
+        &:checked{
+            background-color: var.$tertiary-color;
+            &::before{
+                opacity: 1;
+            }
+        }
+    }
+    textarea{
+        resize: none;
+        height: 150px;
+    }
+    button[type="submit"],
+    input[type="submit"]{
+        background-color: var.$primary-color;
+        border: none;
+        outline: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12.5px 20px;
+        color: var.$white;
+        font-size: 1.6rem;
+        border-radius: 5px;
+        cursor: pointer;
+        min-width: 125px;
+        font-size: 1.8rem;
+        transition: .3s ease background-color;
+        &:hover{
+            background-color: var.$secondary-color;
+        }
+    }
+}

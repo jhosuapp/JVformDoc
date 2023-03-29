@@ -1,0 +1,89 @@
+@use '../config/variables' as var;
+@use '../config/functions' as fun;
+
+.documentation{
+    &__ctn{
+        display: flex;
+        gap: 40px;
+        article{
+            &:first-child{
+                width: 25%;
+            }
+            &:last-child{
+                width: 75%;
+            }
+        }
+    }
+    &__menu{
+        position: relative;
+        aside{
+            h3{
+                border-bottom: 2px solid var.$secondary-color;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+            }
+            position: sticky;
+            top: 30px;
+            ul{
+                margin-left: 0;
+            }
+            ul li{
+                list-style: none;
+                margin-bottom: 10px;
+                a{
+                    color: var.$text-color;
+                    text-decoration: none;
+                    font-size: 1.6rem;
+                    transition: .3s ease opacity;
+                    &:hover{
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+    &__block{
+        margin: 15px 0 10px;
+    }
+    &__part{
+        margin: 25px 0;
+        padding-bottom: 25px;
+        border-bottom: 2px solid var.$cuartary-color;
+        &:first-child{
+            margin-top: 0;
+        }
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+}
+//ESTRUCTURA CÓDIGO
+.documentation__example{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var.$block-code;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    code{
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+    }
+    .token{
+        font-style: italic;
+        &.symbol{
+            color: var.$code-symbol;
+        }
+        &.parameter{
+            color: var.$code-parameter;
+        }
+        &.tag{
+            color: var.$code-tag;
+        }
+        &.atr{
+            color: var.$code-atr;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@use '../config/variables' as var;
+@use '../config/functions' as fun;
+
+.ctm-block{
+    h1,h2,h3,h4,h5,h6{
+        font-weight: 800;
+    }
+    h1, h2{
+        font-weight: 800;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    h2{
+        font-size: 3.4rem;
+    }
+    h3{
+        font-size: 2.4rem;
+    }
+    h4{
+        font-size: 1.8rem;
+    }
+    h5{
+        font-size: 1.6rem;
+    }
+    h6{
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 1.6rem;
+    }
+    b{
+        font-weight: 800;
+    }
+    h1, h2, h3, h4, h5, h6, p, li{
+        color: var.$secondary-color;
+    }
+    &-white{
+        h1, h2, h3, h4, h5, p{
+            color: var.$white;
+        }
+    }
+    &-gray{
+        h1, h2, h3, h4, h5, p, code, span, li{
+            color: var.$text-color;
+        }
+    }
+    &-center{
+        text-align: center;
+    }
+    &-code{
+        code{
+            color: var.$white;
+            background-color: var.$text-color;
+            padding: 3px;
+            border-radius: 5px;
+        }
+    }
+    ul li,
+    ol li{
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+    ul, ol{
+        margin-left: 2.5rem;
+    }
+    ol li{
+        margin-left: 17.5px;
+        &::marker{
+            position: relative;
+        }
+    }
+
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .ctm-block{
+        h1{
+            font-size: 2.8rem;
+        }
+        h2{
+            font-size: 2.4rem;
+        }
+        h3{
+            font-size: 2rem;
+        }
+        h4{
+            font-size: 1.7rem;
+        }
+        h5{
+            font-size: 1.8rem;
+        }
+        p{
+            font-size: 1.6rem;
+        }
+        legend{
+            font-size: 2rem;
+        }
+    }
+}

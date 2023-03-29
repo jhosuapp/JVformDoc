@@ -1,0 +1,81 @@
+@use '../config/variables' as var;
+
+.home-title{
+    padding: 4rem 0;
+}
+
+.home-ctn{
+    padding-bottom: 6rem;
+    form{
+        h4{
+            margin-bottom: 10px;
+        }
+    }
+    .JVform{
+        .errorValidateVF{
+            .JVform__error-message{
+                opacity: 1;
+            }
+        }
+        .JVform__error-message{
+            position: absolute;
+            right: 0;
+            background-color: var.$danger;
+            padding: .5rem;
+            bottom: 100%;
+            border-radius: .5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s ease opacity;
+            display: block;
+            &::before{
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: .5rem solid transparent;
+                border-right: .35rem solid var.$danger;
+                border-bottom: .35rem solid var.$danger;
+                border-top: .5rem solid transparent;
+                position: absolute;
+                bottom: -2px;
+                right: 5px;
+                transform: rotate(45deg);
+            }
+            p{
+                font-size: 1.1rem;
+                color: var.$white;
+            }
+        }
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        .block-input{
+            border-bottom: 2px solid var.$cuartary-color;
+            padding: 0 20px 40px 20px;
+            margin-bottom: 20px;
+            &.noBorder{
+                border: none;
+                padding-bottom: 0;
+            }
+            &.submit{
+                width: 100%;
+                flex: 1 100%;
+                display: flex;
+                justify-content: center;
+            }
+            &.w100{
+                width: 100%;
+                flex: 1 100%;
+            }
+            .flex{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+            .fit-content{
+                width: fit-content;
+            }
+        }
+    }
+}
