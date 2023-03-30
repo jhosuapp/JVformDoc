@@ -1,8 +1,18 @@
+@use '../config/functions' as fun;
+
 .ctn{
     width: 90%;
     margin: auto;
     max-width: 1000px;
+    &--top{
+        padding-top: 50px;
+    }
 }
-.ctn--top{
-    padding-top: 50px;
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .ctn{
+        &--top{
+            padding-top: 30px;
+        }
+    }
 }

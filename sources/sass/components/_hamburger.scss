@@ -1,0 +1,86 @@
+@use '../config/variables' as var;
+@use '../config/functions' as fun;
+
+.hamburger{
+    &__mobile{
+        display: none;
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){ 
+    .hamburger{
+        width: 16px;
+        height: 11px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &.animate{
+            div{
+                &:first-child{
+                    transform: rotate(45deg);
+                    top: 6.5px;
+                }
+                &:nth-child(2){
+                    width: 0;
+                }
+                &:last-child{
+                    transform: rotate(-45deg);
+                    top: -6px;
+                }
+            }
+        }
+        div{
+            width: 85%;
+            height: 1px;
+            background-color: var.$secondary-color;
+            transition: 1s ease background-color;
+            position: relative;
+            transition: .5s ease all;
+            &:nth-child(odd){
+                width: 100%;
+            }
+        }
+        &__mobile{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            position: absolute;
+            top: -30px;
+            background-color: var.$white;
+            height: 40px;
+            width: 100%;
+            &.fixed{
+                position: fixed;
+                top: 0;
+                width: 90%;
+            }
+            &::before{
+                position: absolute;
+                content: "";
+                width: 110%;
+                left: -5%;
+                height: 1px;
+                bottom: 0px;
+                background-color: var.$secondary-color;
+            }
+        }
+        &__block{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+            p{
+                font-size: 1.3rem;
+            }
+            &.flex-end{
+                justify-content: flex-end;
+                a{
+                    color: var.$secondary-color;
+                    text-decoration: none;
+                    font-size: 1.3rem;
+                }                
+            }
+        }
+    }
+}

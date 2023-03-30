@@ -7,7 +7,7 @@
     background-color: var.$secondary-color;
     display: flex;
     align-items: center;
-    z-index: 99;
+    z-index: 9;
     &__ctn{
         display: flex;
         justify-content: space-between;
@@ -19,6 +19,7 @@
             font-size: 3rem;
             color: var.$white;
             font-weight: 600;
+            transition: 1s ease color;
         }
     }
     nav{
@@ -50,6 +51,65 @@
                 left: unset;
                 background-color: var.$white;
                 transition: .3s ease width;
+            }
+        }
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .header{
+        position: relative;
+        &.activeMenu{
+            nav{
+                right: 0;
+            }
+            .header{
+                &__logo p{
+                    color: var.$secondary-color;
+                    transition-delay: .5s;
+                }
+            }
+            .hamburger{
+                div{
+                    background-color: var.$secondary-color;
+                }
+            }
+        }
+        nav{
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            right: -100%;
+            top: 0;
+            background-color: var.$menuMobile-color;
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 1s ease right;
+            ul {
+                display: flex;
+                flex-direction: column;
+                li a{
+                    color: var.$secondary-color;
+                    font-weight: 600;
+                    &::before{
+                        background-color: var.$secondary-color;
+                    }
+                }
+            }
+        }
+        .hamburger{
+            width: 20px;
+            height: 15px;
+            display: flex;
+            align-items: flex-end;
+            div{
+                background-color: var.$white;
+                height: 2px;
             }
         }
     }

@@ -66,6 +66,7 @@
     padding: 15px 20px;
     border-radius: 10px;
     margin: 20px 0;
+    overflow: auto;
     code{
         display: flex;
         align-items: center;
@@ -87,3 +88,55 @@
         }
     }
 }
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .documentation{
+        &__menu{
+            &.menuDoc-active{
+                z-index: 9;
+                aside{
+                    left: 0;
+                }
+                .menu__background{
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+            aside{
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                padding: 0;
+                z-index: 1;
+                padding: 30px;
+                background-color: var.$menuMobile-color;
+                width: 100%;
+                height: 100vh;
+                max-width: 300px;   
+                top: 0;
+                transition: 1s ease left;
+            }
+            .menu__background{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, .55);
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                opacity: 0;
+                transition: .5s ease opacity;
+            }
+        }
+        &__ctn{
+            flex-direction: column;
+            article{
+                &:last-child,
+                &:first-child{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}   
