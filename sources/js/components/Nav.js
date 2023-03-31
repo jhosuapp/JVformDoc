@@ -35,7 +35,9 @@ const Nav = (()=>{
         getVarHamburger && getVarHamburger.addEventListener('click', ()=>{
             getVarHamburger.closest('.header').classList.toggle('activeMenu');
             getVarHamburger.classList.toggle('animate');
-            getVarHamburger.classList.contains('animate') ? getVarBody.style.overflow = "hidden" : getVarBody.style.overflow = "inherit";
+            getVarHamburger.classList.contains('animate') ? 
+            getVarBody.style.overflow = "hidden" : 
+            getVarBody.style.overflow = "inherit";
         });
         //ABRIR MENU DE DOCUMENTACIÓN
         getVarHamburgerDoc && getVarHamburgerDoc.addEventListener('click', ()=>{
@@ -56,7 +58,9 @@ const Nav = (()=>{
     const NavStickyHamburger = ()=>{
         const getVarHamburgerSticky = generalVariables.getHamburgerMenuDoc;
         const reUseStickyMenu = ()=>{
-            window.scrollY >= 60 ? getVarHamburgerSticky.closest('.hamburger__mobile').classList.add('fixed') : getVarHamburgerSticky.closest('.hamburger__mobile').classList.remove('fixed');
+            window.scrollY >= 60 ? 
+            getVarHamburgerSticky.closest('.hamburger__mobile').classList.add('fixed') : 
+            getVarHamburgerSticky.closest('.hamburger__mobile').classList.remove('fixed');
         }        
         window.addEventListener('scroll', reUseStickyMenu);
         reUseStickyMenu();

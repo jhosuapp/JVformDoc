@@ -50,6 +50,7 @@
             background-color: var.$white;
             height: 40px;
             width: 100%;
+            z-index: 1;
             &.fixed{
                 position: fixed;
                 top: 0;
