@@ -81,10 +81,17 @@
     border-radius: 10px;
     margin: 20px 0;
     overflow: auto;
+    overflow-y: hidden;
+    position: relative;
     code{
         display: flex;
         align-items: center;
         font-size: 1.6rem;
+    }
+    &:hover{
+        .copy-code{
+            opacity: 1;
+        }
     }
     .token{
         font-style: italic;
@@ -99,6 +106,39 @@
         }
         &.atr{
             color: var.$code-atr;
+        }
+    }
+}
+//OPCIÓN DE COPIAR CÓDIGO
+.copy-code{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    padding: 0px 10px;
+    border-radius: 2.5px;
+    background-color: var.$copy-code;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 35px;
+    top: calc(50% - 17.5px);
+    cursor: pointer;
+    opacity: 0;
+    transition: .3s ease opacity;
+    gap: 5px;
+    img{
+        width: 12.5px;
+        opacity: .7;
+    }
+    p{
+        color: var.$white;
+        opacity: .7;
+        display: none;
+        font-size: 1.4rem;
+    }
+    &.active{
+        p{
+            display: block;
         }
     }
 }
