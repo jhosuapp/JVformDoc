@@ -7,6 +7,9 @@
     &--top{
         padding-top: 50px;
     }
+    &--height{
+        min-height: calc(100vh - 224px);
+    }
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){

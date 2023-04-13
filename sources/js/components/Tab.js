@@ -34,6 +34,7 @@ const Tab = (()=>{
                 localStorage.setItem('tabPosition', getDataAtr);
                 getCtnTab.forEach((data)=>{
                     const getDataAtrCtn = data.dataset.tabctn;
+                                          
                     if(getDataAtr == getDataAtrCtn){
                         data.classList.add('active');
                     }else{
