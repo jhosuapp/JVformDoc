@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <script type="module" crossorigin src="/JVformDoc/assets/index.a8664c69.js"></script>
-  <link rel="stylesheet" href="/JVformDoc/assets/index.c00aae36.css">
+  <script type="module" crossorigin src="/JVformDoc/assets/index.68692f23.js"></script>
+  <link rel="stylesheet" href="/JVformDoc/assets/index.cfb881ba.css">
 </head>
 <body>
     <!--HEADER-->
@@ -37,7 +37,7 @@
         </div>
     </header>
     <!--SECCIÓN DE DOCUMENTACIÓN-->
-    <section class="documentation__ctn ctn--top ctn">
+    <section class="documentation__ctn ctn--top ctn ctn--height">
         <!--MENU LATERAL IZQUIERDO-->
         <article class="documentation__menu ctm-block">
             <div class="hamburger__mobile">
@@ -59,13 +59,16 @@
                 <!-- BOTONES DEL TAB -->
                 <ul class="close-menu--doc tab-general__btn">
                     <li>
+                        <a href="#anclaDocumentacion">Atributos generales</a>
+                    </li>
+                    <li>
                         <a href="#anclaDocumentacion">Atributos para validaciones</a>
                     </li>
                     <li>
-                        <a href="#anclaDocumentacion">Input file</a>
+                        <a href="#anclaDocumentacion">Atributos para input file</a>
                     </li>
                     <li>
-                        <a href="#anclaDocumentacion">tercer item</a>
+                        <a href="#anclaDocumentacion">Atributos para input password</a>
                     </li>
                 </ul>
             </aside>
@@ -74,6 +77,52 @@
         <!-- CONTENIDO DE LA DOCUMENTACIÓN -->
         <article class="documentation ctm-block ctm-block-gray tab-general" id="anclaDocumentacion">
             <!--ITEM TAB-->
+            <div class="tab-general__ctn">
+                <div class="documentation__part">
+                    <h4>Atributo para mensajes de error</h4>
+                    <div class="documentation__block ctm-code">
+                        <p><code>data-error</code> - Es un atributo personalizado, el cual nos permite personalizar el mensaje de error</p>
+                    </div>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">data-error</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"Mensaje de ejemplo"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="data-validation='Mensaje de ejemplo'">
+                            <p>copiado</p>
+                            <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>En caso de que no pongas este atributo, se tomara un mensaje por defecto, el cual toma el texto "ingresa" + name del campo</p>
+                </div>
+                <div class="documentation__part">
+                    <h4>Atributo para campos no obligatorios</h4>
+                    <div class="documentation__block ctm-code">
+                        <p><code>data-mandatory</code> - Es un atributo personalizado, el cual permite que un campo no sea obligatorio</p>
+                    </div>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">data-mandatory</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"false"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="data-mandatory='false'">
+                            <p>copiado</p>
+                            <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>Por defecto todos los campos son obligatorios, no es necesario que añadas este atributo a menos que necesites tener campos no obligatorios</p>
+                </div>
+            </div>
             <div class="tab-general__ctn">
                 <div class="documentation__part">
                     <h4>Atributos para validaciones que vienen por defecto</h4>
@@ -98,7 +147,7 @@
                             <span class="token parameter">"text"</span>
                             <span class="token symbol">&gt;</span>
                         </code>
-                        <div class="copy-code" data-copy="input data-validation='text'" data-tag="true">
+                        <div class="copy-code" data-copy="data-validation='text'">
                             <p>copiado</p>
                             <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
                         </div>
@@ -120,7 +169,7 @@
                             <span class="token parameter">"^(\+)?[\d\s\-\.]{5,30}$"</span>
                             <span class="token symbol">&gt;</span>
                         </code>
-                        <div class="copy-code" data-copy="input data-validation='text'" data-tag="true">
+                        <div class="copy-code" data-copy="data-expresion='^(\+)?[\d\s\-\.]{5,30}$'">
                             <p>copiado</p>
                             <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
                         </div>
@@ -130,30 +179,104 @@
             </div>
             <div class="tab-general__ctn">
                 <div class="documentation__part">
-                    <h4>Atributos para validaciones que vienen por defecto</h4>
+                    <h4>Atributo para extensiones permitidas</h4>
                     <div class="documentation__block ctm-code">
-                        <p><code>data-validation</code> - Es un atributo que nos permite añadir validaciones por medio de unas <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">expresiones regulares</a> predefinidas, los parametros que puede recibir son los siguientes:</p>
+                        <p><code>data-fileallowed</code> - Es un atributo personalizado, el cual nos permite limitar el tipo de archivos que suben</p>
                     </div>
-                        <ul>
-                        <li> <b>data-validation="text"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="email"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="phone"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="password"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="message"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="url"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                    </ul>
                     <pre class="documentation__example">
-                    <code class="language-javascript">
-                        <span class="token symbol">&lt;</span>
-                        <span class="token tag">input </span>
-                        <span class="token atr">data-validation</span>
-                        <span class="token symbol"></span>
-                        <span class="token symbol">=</span>
-                        <span class="token parameter">"text"</span>
-                        <span class="token symbol">&gt;</span>
-                    </code>
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">type</span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"file" </span>
+                            <span class="token atr">data-fileallowed</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"jpg,pdf,png"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="data-fileallowed='jpg,pdf,png'">
+                            <p>copiado</p>
+                            <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
+                        </div>
                     </pre>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Separar las extensiones con "," y sin espacios para su correcta funcionalidad</p>
+                </div>
+                <div class="documentation__part">
+                    <h4>Atributo para peso máximo permitido</h4>
+                    <div class="documentation__block ctm-code">
+                        <p><code>data-filesize</code> - Es un atributo personalizado, el cual nos permite limitar el tamaño de los archivos que suben</p>
+                    </div>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">type</span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"file" </span>
+                            <span class="token atr">data-filesize</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"1000000"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="data-filesize='1000000'">
+                            <p>copiado</p>
+                            <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>El peso se calcula tomando como base los bytes, por lo tanto, si añadimos el siguiente número 1000000, el límite de peso sería de un 1MB</p>
+                </div>
+            </div>
+            <div class="tab-general__ctn">
+                <div class="documentation__part">
+                    <h4>Atributos para confirmación de contraseña</h4>
+                    <div class="documentation__block ctm-code">
+                        <p><code>data-confirmpass</code> - Es un atributo personalizado, el cual nos permite añadir un segundo campo de contraseña para la confirmación, con el true, indicamos que es un campo para confirmar contraseña, por lo tanto, tendrá que hacer match con otro campo de contraseña</p>
+                    </div>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">type</span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"password" </span>
+                            <span class="token atr">data-confirmpass</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"true"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="data-confirmpass='true'">
+                            <p>copiado</p>
+                            <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>Sí necesita la confirmación de contraseña, debe añadir el atributo que se explica a continuación para su correcto funcionamiento</p>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">type</span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"password" </span>
+                            <span class="token atr">data-confirmpass</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"true" </span>
+                            <span class="token atr">data-match</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"#id del campo"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="data-match='#id del campo'">
+                            <p>copiado</p>
+                            <img src="/JVformDoc/assets/clipboard.c90ba889.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>En este atributo debe añadir el id del campo con el que debe hacer match</p>
                 </div>
             </div>
         </article>
