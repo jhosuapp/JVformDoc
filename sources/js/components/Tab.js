@@ -18,15 +18,20 @@ const Tab = (()=>{
         //CREAMOS ATRIBUTOS DINAMICOS PARA BOTONES Y CONTENEDORES
         reUseAsignementAtr(getButtonsTab, 'tabbtn');
         reUseAsignementAtr(getCtnTab, 'tabctn');
-        //AÑADIMOS ACTIVE POR DEFECTO AL PRIMER ELEMENTO 
-        getButtonsTab[0].classList.add('active');
-        getCtnTab[0].classList.add('active');
-    
+        //AÑADIMOS ACTIVE POR DEFECTO AL PRIMER ELEMENTO EN CASO DE QUE NO EXISTA EL ELEMENTO EN LOCALSTORAGE
+        const getLocalStrTab = localStorage.getItem('tabPosition');
+        if(getLocalStrTab){
+            getButtonsTab[getLocalStrTab].classList.add('active');
+            getCtnTab[getLocalStrTab].classList.add('active');
+        }else{
+            getButtonsTab[0].classList.add('active');
+            getCtnTab[0].classList.add('active');
+        }
         getButtonsTab.forEach((data)=>{
     
             data.addEventListener('click', ()=>{
                 const getDataAtr = data.dataset.tabbtn;
-                
+                localStorage.setItem('tabPosition', getDataAtr);
                 getCtnTab.forEach((data)=>{
                     const getDataAtrCtn = data.dataset.tabctn;
                     if(getDataAtr == getDataAtrCtn){
