@@ -57,13 +57,13 @@
                 <!-- BOTONES DEL TAB -->
                 <ul class="close-menu--doc tab-general__btn">
                     <li>
+                        <a href="#anclaDocumentacion">Atributos generales</a>
+                    </li>
+                    <li>
                         <a href="#anclaDocumentacion">Atributos para validaciones</a>
                     </li>
                     <li>
-                        <a href="#anclaDocumentacion">Input file</a>
-                    </li>
-                    <li>
-                        <a href="#anclaDocumentacion">tercer item</a>
+                        <a href="#anclaDocumentacion">Atributos para input file</a>
                     </li>
                 </ul>
             </aside>
@@ -72,6 +72,52 @@
         <!-- CONTENIDO DE LA DOCUMENTACIÓN -->
         <article class="documentation ctm-block ctm-block-gray tab-general" id="anclaDocumentacion">
             <!--ITEM TAB-->
+            <div class="tab-general__ctn">
+                <div class="documentation__part">
+                    <h4>Atributo para mensajes de error</h4>
+                    <div class="documentation__block ctm-code">
+                        <p><code>data-error</code> - Es un atributo personalizado, el cual nos permite personalizar el mensaje de error</p>
+                    </div>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">data-error</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"Mensaje de ejemplo"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="input data-validation='Mensaje de ejemplo'" data-tag="true">
+                            <p>copiado</p>
+                            <img src="/sources/assets/svg/clipboard.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>En caso de que no pongas este atributo, se tomara un mensaje por defecto, el cual toma el texto "ingresa" + name del campo</p>
+                </div>
+                <div class="documentation__part">
+                    <h4>Atributo para campos no obligatorios</h4>
+                    <div class="documentation__block ctm-code">
+                        <p><code>data-mandatory</code> - Es un atributo personalizado, el cual permite que un campo no sea obligatorio</p>
+                    </div>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">data-mandatory</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"false"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="input data-mandatory='false'" data-tag="true">
+                            <p>copiado</p>
+                            <img src="/sources/assets/svg/clipboard.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>Por defecto todos los campos son obligatorios, no es necesario que añadas este atributo a menos que necesites tener campos no obligatorios</p>
+                </div>
+            </div>
             <div class="tab-general__ctn">
                 <div class="documentation__part">
                     <h4>Atributos para validaciones que vienen por defecto</h4>
@@ -128,30 +174,48 @@
             </div>
             <div class="tab-general__ctn">
                 <div class="documentation__part">
-                    <h4>Atributos para validaciones que vienen por defecto</h4>
+                    <h4>Atributo para peso máximo permitido</h4>
                     <div class="documentation__block ctm-code">
-                        <p><code>data-validation</code> - Es un atributo que nos permite añadir validaciones por medio de unas <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">expresiones regulares</a> predefinidas, los parametros que puede recibir son los siguientes:</p>
+                        <p><code>data-filesize</code> - Es un atributo personalizado, el cual nos permite limitar el tamaño de los archivos que suben</p>
                     </div>
-                        <ul>
-                        <li> <b>data-validation="text"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="email"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="phone"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="password"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="message"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                        <li> <b>data-validation="url"</b> - nos añade la siguiente expresión regular como validación "/^[a-zA-ZÀ-ÿ\s]{3,40}$/"</li>
-                    </ul>
                     <pre class="documentation__example">
-                    <code class="language-javascript">
-                        <span class="token symbol">&lt;</span>
-                        <span class="token tag">input </span>
-                        <span class="token atr">data-validation</span>
-                        <span class="token symbol"></span>
-                        <span class="token symbol">=</span>
-                        <span class="token parameter">"text"</span>
-                        <span class="token symbol">&gt;</span>
-                    </code>
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">data-filesize</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"1000000"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="input data-filesize='1000000'" data-tag="true">
+                            <p>copiado</p>
+                            <img src="/sources/assets/svg/clipboard.svg" alt="clipboard">
+                        </div>
                     </pre>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>El peso se calcula tomando como base los bytes, por lo tanto, si añadimos el siguiente número 1000000, el límite de peso sería de un 1MB</p>
+                </div>
+                <div class="documentation__part">
+                    <h4>Atributo para peso máximo permitido</h4>
+                    <div class="documentation__block ctm-code">
+                        <p><code>data-filesize</code> - Es un atributo personalizado, el cual nos permite limitar el tamaño de los archivos que suben</p>
+                    </div>
+                    <pre class="documentation__example">
+                        <code class="language-javascript">
+                            <span class="token symbol">&lt;</span>
+                            <span class="token tag">input </span>
+                            <span class="token atr">data-filesize</span>
+                            <span class="token symbol"></span>
+                            <span class="token symbol">=</span>
+                            <span class="token parameter">"1000000"</span>
+                            <span class="token symbol">&gt;</span>
+                        </code>
+                        <div class="copy-code" data-copy="input data-filesize='1000000'" data-tag="true">
+                            <p>copiado</p>
+                            <img src="/sources/assets/svg/clipboard.svg" alt="clipboard">
+                        </div>
+                    </pre>
+                    <p>El peso se calcula tomando como base los bytes, por lo tanto, si añadimos el siguiente número 1000000, el límite de peso sería de un 1MB</p>
                 </div>
             </div>
         </article>
